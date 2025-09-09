@@ -439,18 +439,33 @@
             }
         }
 
-        function generateProjects() {
-            const projects = Array.from({ length: 18 }, (_, i) => ({
-                id: i + 1,
-                name: `Project ${i + 1}`,
-                tools: ['React', 'TypeScript', 'Node.js']
-            }));
+        const projectsData = [
+            { name: "Search Website", tools: ["HTML/CSS", "JavaScript", "Python"], link: "https://github.com/IKK999/CS50/tree/web50/search" },
+            { name: "Wiki Website", tools: ["HTML/CSS", "JavaScript", "Python"], link: "https://github.com/IKK999/CS50/tree/web50/wiki" },
+            { name: "Commerce Website", tools: ["HTML/CSS", "JavaScript", "Python"], link: "https://github.com/IKK999/CS50/tree/web50/commerce" },
+            { name: "Mail Website", tools: ["HTML/CSS", "JavaScript", "Python"], link: "https://github.com/IKK999/CS50/tree/web50/mail" },
+            { name: "Network Website", tools: ["HTML/CSS", "JavaScript", "Python"], link: "https://github.com/IKK999/CS50/tree/web50/network" },
+            { name: "Language Learning Website", tools: ["HTML/CSS", "JavaScript", "Python"], link: "https://github.com/IKK999/CS50/tree/web50/capstone" },
+            { name: "TicTacToe AI", tools: ["Python", "MiniMax"], link: "https://github.com" },
+            { name: "Degrees AI", tools: ["Python", "Separation Degrees"], link: "https://github.com" },
+            { name: "Minesweeper AI", tools: ["Python", "Informed Agents"], link: "https://github.com" },
+            { name: "Knights AI", tools: ["Python", "Model Cheching"], link: "https://github.com" },
+            { name: "Pagerank AI", tools: ["Python", "Surfer Model"], link: "https://github.com" },
+            { name: "Heredity AI", tools: ["Python", "Bayesian Network"], link: "https://github.com" },
+            { name: "Crossword AI", tools: ["Python", "Constraint Satisfaction"], link: "https://github.com" },
+            { name: "Nim AI", tools: ["Python", "Reinforcement Learning"], link: "https://github.com" },
+            { name: "Shopping AI", tools: ["Python", "Nearest-Neighbor Classifier"], link: "https://github.com" },
+            { name: "Traffic AI", tools: ["Python", "Neural Network"], link: "https://github.com" },
+            { name: "Parser AI", tools: ["Python", "Grammar Formalism"], link: "https://github.com" },
+            { name: "Attention AI", tools: ["Python", "Attention Mechanism"], link: "https://github.com" }
+        ];
 
+        function generateProjects() {
             const grid = document.getElementById('projectsGrid');
             
-            projects.forEach(project => {
+            projectsData.forEach(project => {
                 const card = document.createElement('a');
-                card.href = 'https://github.com';
+                card.href = project.link;
                 card.target = '_blank';
                 card.rel = 'noopener noreferrer';
                 card.className = 'project-card';
